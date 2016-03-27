@@ -3,25 +3,26 @@ import random
 
 
 dimensions = (14, 10)
-floor = "◻️"
-wall = "◼️"
-basic_dungeon =     [[wall]*14,
+floor = "．"
+horizontal_wall = "－"
+wall = "｜"
+basic_dungeon =     [[horizontal_wall]*14,
                     [wall]+[floor]*12 + [wall],
                     [wall]+[floor]*12 + [wall],
                     [wall]+[floor]*12 + [wall],
                     [wall]+[floor]*12 + [wall],
                     [wall]+[floor]*12 + [wall],
-                    [wall]*14]
+                    [horizontal_wall]*14]
 
 DUNGEONS = [basic_dungeon]
-MONSTERS = [""]*50+["A"]*30+["B"]*20
-ITEMS = [""]*50+["/"]*20+["$"]*20+["*"]*10
-OBJECTS = [""]*50+["#"]*20+["_"]*30
+MONSTERS = [""]*50+["Ａ"]*30+["Ｂ"]*20
+ITEMS = [""]*50+["／"]*20+["＄"]*20+["＊"]*10
+OBJECTS = [""]*50+["＃"]*20+["＿"]*30
 THINGS = [MONSTERS, ITEMS, OBJECTS]
-PLAYERS = ["@"]
+PLAYERS = ["＠"]
 
 item_tries = 10
-DOORS = ["+"]
+DOORS = ["＋"]
 
 def gen_dungeon():
     TEMPLATE_DUNGEON = random.choice(DUNGEONS)
